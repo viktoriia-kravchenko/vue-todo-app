@@ -4,6 +4,11 @@ export default {
     modelValue: String,
   },
   emits: ['update:modelValue'],
+  methods: {
+    save(status) {
+      this.$emit('update:modelValue', status);
+    },
+  },
 };
 </script>
 
@@ -13,7 +18,7 @@ export default {
       href="#/"
       class="filter__link"
       :class="{ selected: modelValue === 'all' }"
-      @click="$emit('update:modelValue', 'all')"
+      @click="save('all')"
     >
       All
     </a>
@@ -22,7 +27,7 @@ export default {
       href="#/active"
       class="filter__link"
       :class="{ selected: modelValue === 'active' }"
-      @click="$emit('update:modelValue', 'active')"
+      @click="save('active')"
     >
       Active
     </a>
@@ -31,11 +36,12 @@ export default {
       href="#/completed"
       class="filter__link"
       :class="{ selected: modelValue === 'completed' }"
-      @click="$emit('update:modelValue', 'completed')"
+      @click="save('completed')"
     >
       Completed
     </a>
   </nav>
 </template>
 
-<style></style>
+<style>
+</style>

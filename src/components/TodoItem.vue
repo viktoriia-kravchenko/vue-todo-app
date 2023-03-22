@@ -39,8 +39,6 @@ export default {
         ...this.todo,
         title: this.newTitle,
       });
-
-      this.newTitle = '';
     },
     remove() {
       this.$emit('delete');
@@ -53,19 +51,19 @@ export default {
         this.$refs['title-field'].focus();
       });
     }
-  }
-}
+  },
+};
 </script>
-
-
-
-
-
 
 <template>
   <div class="todo" :class="{ completed: todo.completed }">
     <label class="todo__status-label">
-      <input type="checkbox" class="todo__status" :checked="todo.completed" @change="toggle" />
+      <input 
+        type="checkbox" 
+        class="todo__status" 
+        :checked="todo.completed" 
+        @change="toggle" 
+      />
     </label>
 
     <form v-if="editing" @submit.prevent="rename">
@@ -100,4 +98,5 @@ export default {
   </div>
 </template>
 
-<style ></style>
+<style >
+</style>
