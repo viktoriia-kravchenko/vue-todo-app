@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/zip-code-app',
+  base: '/zip-code-usa-app/',
   plugins: [vue()],
   resolve: {
     alias: {
